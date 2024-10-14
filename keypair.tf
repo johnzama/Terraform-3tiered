@@ -15,7 +15,8 @@ output "public_key" {
   value = tls_private_key.web_ssh_key.public_key_openssh
 }
 
+# Create Key Pair in AWS using the public key
 resource "aws_key_pair" "web_key_pair" {
-  key_name   = "web-tier-key"  # Name the key pair
-  public_key = tls_private_key.web_ssh_key.public_key_openssh  # Use the public key generated above
+  key_name   = "web-tier-key"
+  public_key = tls_private_key.web_ssh_key.public_key_openssh
 }
