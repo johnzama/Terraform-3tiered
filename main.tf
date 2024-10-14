@@ -11,3 +11,7 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
+
+provider "tls" {
+  # No additional configuration is needed for the TLS provider
+}

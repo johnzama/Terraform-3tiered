@@ -1,5 +1,5 @@
 resource "aws_egress_only_internet_gateway" "main_eigw" {
-  vpc_id = aws_vpc.main-vpc
+  vpc_id = main-vpc
 
   tags = {
     Name = "main"
@@ -7,7 +7,7 @@ resource "aws_egress_only_internet_gateway" "main_eigw" {
 }
 
 resource "aws_route_table" "webb-rt" {
-  vpc_id = aws_vpc.main-vpc
+  vpc_id = main-vpc
 
   route {
     cidr_block = "10.0.1.0/24"
@@ -35,7 +35,7 @@ resource "aws_route_table_association" "webb-ass-02" {
 }
 
 resource "aws_route_table" "app-rt" {
-  vpc_id = aws_vpc.main-vpc
+  vpc_id = main-vpc
 
   route {
     cidr_block = "10.0.1.0/24"
@@ -63,7 +63,7 @@ resource "aws_route_table_association" "app-ass-02" {
 }
 
 resource "aws_route_table" "db-rt" {
-  vpc_id = aws_vpc.main-vpc
+  vpc_id = main-vpc
 
   route {
     cidr_block = "10.0.1.0/24"
@@ -81,7 +81,6 @@ resource "aws_route_table" "db-rt" {
 }
 
 resource "aws_eip" "main-aws_eip" {
-  instance = aws_instance.web.id
   domain   = "vpc"
 }
 
