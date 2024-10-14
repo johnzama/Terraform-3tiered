@@ -1,6 +1,6 @@
 # Elastic IP for NAT Gateway
 resource "aws_eip" "main_eip" {
-  vpc = true
+  domain = "vpc"
 }
 
 # NAT Gateway (Place in Public Subnet)
