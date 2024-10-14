@@ -1,0 +1,16 @@
+# Ignore the .terraform directory
+.terraform/
+
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Ignore sensitive variable files
+*.tfvars
+
+# Ignore plan files
+*.tfplan
+
+# Ignore node_modules for JavaScript projects
+node_modules/
+
